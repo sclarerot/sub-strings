@@ -1,6 +1,14 @@
 def substrings(string, dictionary)
   return_hash = {}
-  
+  downcase_string = string.downcase
+
+  dictionary.each do |current_string|
+    match = downcase_string.scan(current_string).length
+    return_hash[current_string] = match unless match == 0
+  end
+
+  puts return_hash
+
 end
 
 i = 1
